@@ -10,7 +10,7 @@ weight decay regularization of this single layer neural network.
 __author__ = "Karan Jariwala"
 
 import numpy as np
-import random
+import random, argparse
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
@@ -266,7 +266,39 @@ if __name__ == '__main__':
     trainX, trainY = readData(TRAIN_FILENAME) # Training data
     testX, testY = readData(TEST_FILENAME) # Testing data
 
-    sm = Softmax(epochs=1000, learningRate=0.07, batchSize=10, regStrength=0.001, momentum=0.05)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-e", "--epochs", dest="epochs", default=1000,
+                        type=int, help="Number of epochs")
+    parser.add_argument("-lr", "--learningrate", dest="learningRate", default=0.07,
+                        type=float, help="Learning rate or step size")
+    parser.add_argument("-bs", "--batchSize", dest="batchSize", default=10,
+                        type=int, help="Number of sample in mini-batches")
+    parser.add_argument("-r", "--regStrength", dest="regStrength", default=0.001,
+                        type=float, help="L2 weight decay regularization lambda value")
+    parser.add_argument("-m", "--momentum", dest="momentum", default=0.05,
+                        type=float, help="A momentum value")
+
+    args = parser.parse_args()
+
+    print(
+        "Epochs: {} | Learning Rate: {} | Batch Size: {} | Regularization Strength: {} | "
+        "Momentum: {} |".format(
+            args.epochs,
+            args.learningRate,
+            args.batchSize,
+            args.regStrength,
+            args.momentum
+        ))
+
+    epochs = int(args.epochs)
+    learningRate = float(args.learningRate)
+    batchSize = int(args.batchSize)
+    regStrength = int(args.regStrength)
+    momentum = int(args.momentum)
+
+
+    sm = Softmax(epochs=epochs, learningRate=learningRate, batchSize=batchSize,
+                 regStrength=regStrength, momentum=momentum)
     trainLosses, testLosses, trainAcc, testAcc = sm.train(trainX, trainY, testX, testY) # Train a network
     plotGraph(trainLosses, testLosses, trainAcc, testAcc)
     plotDecisionBoundary(trainX, trainY)

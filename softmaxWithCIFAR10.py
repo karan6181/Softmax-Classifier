@@ -7,7 +7,7 @@ Description: Using softmax classifier on CIFAR-10 dataset
 
 __author__ = 'Karan Jariwala'
 import itertools
-import os
+import os, argparse
 import pickle
 
 import matplotlib.pyplot as plt
@@ -205,8 +205,38 @@ if __name__ == "__main__":
     yTrain = yTrain.reshape((-1, 1))
     yTest = yTest.reshape((-1, 1))
 
-    sftmx = sm.Softmax(epochs=100, learningRate=0.001, batchSize=200,
-                       regStrength=0.0001, momentum=0.005)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-e", "--epochs", dest="epochs", default=100,
+                        type=int, help="Number of epochs")
+    parser.add_argument("-lr", "--learningrate", dest="learningRate", default=0.001,
+                        type=float, help="Learning rate or step size")
+    parser.add_argument("-bs", "--batchSize", dest="batchSize", default=200,
+                        type=int, help="Number of sample in mini-batches")
+    parser.add_argument("-r", "--regStrength", dest="regStrength", default=0.001,
+                        type=float, help="L2 weight decay regularization lambda value")
+    parser.add_argument("-m", "--momentum", dest="momentum", default=0.005,
+                        type=float, help="A momentum value")
+
+    args = parser.parse_args()
+
+    print(
+        "Epochs: {} | Learning Rate: {} | Batch Size: {} | Regularization Strength: {} | "
+        "Momentum: {} |".format(
+            args.epochs,
+            args.learningRate,
+            args.batchSize,
+            args.regStrength,
+            args.momentum
+        ))
+
+    epochs = int(args.epochs)
+    learningRate = float(args.learningRate)
+    batchSize = int(args.batchSize)
+    regStrength = int(args.regStrength)
+    momentum = int(args.momentum)
+
+    sftmx = sm.Softmax(epochs=epochs, learningRate=learningRate, batchSize=batchSize,
+                       regStrength=regStrength, momentum=momentum)
     trainLosses, testLosses, trainAcc, testAcc = sftmx.train(xTrain, yTrain, xTest, yTest)
     sm.plotGraph(trainLosses, testLosses, trainAcc, testAcc)
     plotConfusionMatrix(sftmx, xTest, yTest, "0123456789",
