@@ -47,7 +47,7 @@ Run Softmax classifier on Iris dataset as:
 python softmaxClassifier.py
 ```
 
-```shell
+```powershell
 python softmaxClassifier.py -lr 0.07 -e 1000 -bs 10 -r 0.001 -m 0.05
 ```
 
@@ -57,7 +57,7 @@ If you want to run Softmax classifier on CIFAR-10 dataset:
 python softmaxWithCIFAR10.py
 ```
 
-```shell
+```powershell
 python softmaxWithCIFAR10.py -lr 0.01 -e 100 -bs 200 -r 0.001 -m 0.005
 ```
 
@@ -110,9 +110,9 @@ where,
 
    ##### Sample Images:
 
-   ![CIFAR-10 Images](cifar10_images.png)
+   ![CIFAR-10 Images](Images/cifar10_images.png)
 
-   ```powershell
+   ```python
    HYPERPARAMETERS:
    Epochs: 1000
    Learning Rate: 0.001
