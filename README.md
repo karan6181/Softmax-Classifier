@@ -22,7 +22,7 @@ Here, softmax was used as an **activation function** which allows us to interpre
 
 Implemented a Softmax classifier with **L_2 weight decay regularization**. Regularization is used to prevent overfitting in neural nets. When training neural networks, it is common to use "weight decay," where after each update, the weights are multiplied by a factor slightly less than 1. This prevents the weights from growing too large, and can be seen as gradient descent on a quadratic regularization term.
 
-![L2 weight decay regularization](Images/l2Regularization.png)
+![L2 weight decay regularization](Images/l2Regularization.PNG)
 
 where, the regularization parameter lambda determines how you trade off the origin loss L with the large weights penalization and 'w' is the coefficient of the weight matrix.
 
