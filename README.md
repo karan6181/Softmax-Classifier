@@ -38,10 +38,11 @@ I have also used **stochastic gradient descent with mini-batches** and **momentu
 - Numpy
 - Matplotlib
 - pickle
+------
 
 ### Execution of Program:
 
-Run Softmax classifier on Iris dataset as:
+**Run Softmax classifier on Iris dataset as:**
 
 ```powershell
 python softmaxClassifier.py
@@ -51,7 +52,7 @@ python softmaxClassifier.py
 python softmaxClassifier.py -lr 0.07 -e 1000 -bs 10 -r 0.001 -m 0.05
 ```
 
-If you want to run Softmax classifier on CIFAR-10 dataset:
+**Run Softmax classifier on CIFAR-10 dataset as:**
 
 ```powershell
 python softmaxWithCIFAR10.py
@@ -92,15 +93,15 @@ where,
 
    ![Mean Per Class Accuracy and Cross Entropy Loss over Epochs](Images/2_1_crossEntropyLoss_MeanPerClassAccuracy.png)
 
-   - ##### Train Dataset:
+   - #### Train Dataset:
 
-![Decision Boundary on Training data](Images/2_2_DecisionBoundary_trainData.png)
+   ![Decision Boundary on Training data](Images/2_2_DecisionBoundary_trainData.png)
 
-- ##### Test Dataset:
+   - #### Test Dataset:
 
-![Decision Boundary on Test data](Images/2_2_DecisionBoundary_TestData.png)
+   ![Decision Boundary on Test data](Images/2_2_DecisionBoundary_TestData.png)
 
-1. #### CIFAR-10 Dataset:
+2. #### CIFAR-10 Dataset:
 
    The CIFAR-10 dataset contains 60,000 RGB images from 10 categories. Download it from here: 
 
