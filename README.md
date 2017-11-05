@@ -66,11 +66,11 @@ where,
 
 | Parameter | Details                                  |
 | --------- | ---------------------------------------- |
-| -lr       | Learning rate or step size **\*[Default: 0.07]***** |
-| -e        | Number of epochs **\*[Default: 1000]***** |
-| -bs       | Number of sample in mini-batches**[Default: 10]** |
-| -r        | L2 weight decay regularization lambda value**[Default: 0.001]** |
-| -m        | A momentum value**[Default: 0.05]**      |
+| -lr       | Learning rate or step size ***[Default: 0.07]*** |
+| -e        | Number of epochs ***[Default: 1000]*** |
+| -bs       | Number of sample in mini-batches ***[Default: 10]*** |
+| -r        | L2 weight decay regularization lambda value ***[Default: 0.001]*** |
+| -m        | A momentum value ***[Default: 0.05]***      |
 
 
 
